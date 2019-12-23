@@ -16,7 +16,8 @@
     "event-stream": "^4.0.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "hbs": "^4.0.1"
+    "handlebars": "^4.5.3",
+    "hbs": "^4.0.6"
   },
   "devDependencies": {
     "nodemon": "^1.18.4",
