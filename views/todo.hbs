@@ -1,0 +1,47 @@
+<form method="post">
+  <div class="row">
+    <div class="col">
+      <button hidden>Autosave</button>
+      <button class="btn btn-primary btn-lg mt-1 mb-4 border-white" name="new" value="true"><i class="fas fa-notes-medical fa-lg mr-3"></i>Add New Item</button>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-11">
+      {{#if todo.length}}
+        <ul class="list-group">
+          {{#each todo}}
+            <li class="list-group-item mb-0 p-0 ml-5 d-flex align-items-center bg-transparent border-0 text-white">
+              <input
+                type="checkbox"
+                onchange="this.form.submit()"
+                name="todo[{{@index}}][checked]"
+                class="mb-2"
+                {{#if this.checked}}checked{{/if}}
+              />
+              <input
+                name="todo[{{@index}}][text]"
+                onchange="this.form.submit()"
+                class="form-control mx-2 bg-transparent text-white pb-2 h3 text-uppercase"
+                value="{{this.text}}"
+              />
+              <button title="Delete" class="btn btn-danger border-white mb-2" name="remove" value="{{@index}}"><i class="fas fa-lg fa-trash-alt"></i></button>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <h4>{{userinfo.given_name}}'s To-Do List is empty</h4>
+      {{/if}}
+    </div>
+  </div>
+  <style>
+    input[type=checkbox]:checked + input {
+      text-decoration: line-through;
+      opacity: 0.75;
+    }
+  </style>
+</form>
+
+<nav class="col-sm-2 fixed-bottom d-flex justify-content-start">
+{{!-- <img class="rubberband" style='height: 400px; width: 350px; object-fit: contain' src='cowbell.jpg'/>  --}}
+<img class="rubberband pt-5 pr-2" style='height: 400px; width: 350px; object-fit: contain' src='cowbell.png'/>
+</nav>

@@ -1,0 +1,11 @@
+html {  
+    background-image: url('../images/oktane20.png'); 
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 100vh; 
+    
+} 
